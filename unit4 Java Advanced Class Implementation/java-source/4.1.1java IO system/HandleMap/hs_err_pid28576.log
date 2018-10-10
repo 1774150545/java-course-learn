@@ -1,0 +1,109 @@
+#
+# An unexpected error has been detected by Java Runtime Environment:
+#
+# java.lang.OutOfMemoryError: requested 16384000 bytes for GrET in C:\BUILD_AREA\jdk6_07\hotspot\src\share\vm\utilities\growableArray.cpp. Out of swap space?
+#
+#  Internal Error (allocation.inline.hpp:42), pid=28576, tid=27056
+#  Error: GrET in C:\BUILD_AREA\jdk6_07\hotspot\src\share\vm\utilities\growableArray.cpp
+#
+# Java VM: Java HotSpot(TM) Client VM (10.0-b23 mixed mode, sharing windows-x86)
+# If you would like to submit a bug report, please visit:
+#   http://java.sun.com/webapps/bugreport/crash.jsp
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x015be800):  VMThread [stack: 0x00540000,0x00590000] [id=27056]
+
+Stack: [0x00540000,0x00590000]
+[error occurred during error reporting (printing stack bounds), id 0xc0000005]
+
+VM_Operation (0x003cf998): GenCollectForAllocation, mode: safepoint, requested by thread 0x0159e400
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0160c800 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=28528, stack(0x03ab0000,0x03b00000)]
+  0x01607800 JavaThread "CompilerThread0" daemon [_thread_blocked, id=24616, stack(0x03a60000,0x03ab0000)]
+  0x01607000 JavaThread "Attach Listener" daemon [_thread_blocked, id=27064, stack(0x03a10000,0x03a60000)]
+  0x01637c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=27344, stack(0x039c0000,0x03a10000)]
+  0x015c0c00 JavaThread "Finalizer" daemon [_thread_blocked, id=25320, stack(0x03970000,0x039c0000)]
+  0x015bfc00 JavaThread "Reference Handler" daemon [_thread_blocked, id=28476, stack(0x03920000,0x03970000)]
+  0x0159e400 JavaThread "main" [_thread_blocked, id=27268, stack(0x00380000,0x003d0000)]
+
+Other Threads:
+=>0x015be800 VMThread [stack: 0x00540000,0x00590000] [id=27056]
+  0x0161a400 WatcherThread [stack: 0x03b00000,0x03b50000] [id=28280]
+
+VM state:at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00238698/0x000000ec] Threads_lock - owner thread: 0x015be800
+[0x0159dcf0/0x0000012c] Heap_lock - owner thread: 0x0159e400
+
+Heap
+ def new generation   total 36288K, used 36288K [0x07b30000, 0x0a290000, 0x0a290000)
+  eden space 32256K, 100% used [0x07b30000, 0x09ab0000, 0x09ab0000)
+  from space 4032K, 100% used [0x09ab0000, 0x09ea0000, 0x09ea0000)
+  to   space 4032K,   0% used [0x09ea0000, 0x09ea0000, 0x0a290000)
+ tenured generation   total 483968K, used 477456K [0x0a290000, 0x27b30000, 0x27b30000)
+   the space 483968K,  98% used [0x0a290000, 0x274d4030, 0x274d4200, 0x27b30000)
+ compacting perm gen  total 12288K, used 372K [0x27b30000, 0x28730000, 0x2bb30000)
+   the space 12288K,   3% used [0x27b30000, 0x27b8d000, 0x27b8d000, 0x28730000)
+    ro space 8192K,  62% used [0x2bb30000, 0x2c032ba0, 0x2c032c00, 0x2c330000)
+    rw space 12288K,  52% used [0x2c330000, 0x2c9788e0, 0x2c978a00, 0x2cf30000)
+
+Dynamic libraries:
+0x00400000 - 0x00423000 	C:\Program Files\Java\jre1.6.0_07\bin\javaw.exe
+0x77310000 - 0x7744c000 	C:\Windows\SYSTEM32\ntdll.dll
+0x757e0000 - 0x758b4000 	C:\Windows\system32\kernel32.dll
+0x75310000 - 0x7535b000 	C:\Windows\system32\KERNELBASE.dll
+0x75fb0000 - 0x76050000 	C:\Windows\system32\ADVAPI32.dll
+0x75400000 - 0x754ac000 	C:\Windows\system32\msvcrt.dll
+0x77450000 - 0x77469000 	C:\Windows\SYSTEM32\sechost.dll
+0x756b0000 - 0x75751000 	C:\Windows\system32\RPCRT4.dll
+0x764c0000 - 0x76589000 	C:\Windows\system32\USER32.dll
+0x755f0000 - 0x7563e000 	C:\Windows\system32\GDI32.dll
+0x75640000 - 0x7564a000 	C:\Windows\system32\LPK.dll
+0x77470000 - 0x7750d000 	C:\Windows\system32\USP10.dll
+0x77510000 - 0x7752f000 	C:\Windows\system32\IMM32.DLL
+0x758f0000 - 0x759bc000 	C:\Windows\system32\MSCTF.dll
+0x7c340000 - 0x7c396000 	C:\Program Files\Java\jre1.6.0_07\bin\msvcr71.dll
+0x6d7c0000 - 0x6da10000 	C:\Program Files\Java\jre1.6.0_07\bin\client\jvm.dll
+0x75360000 - 0x75392000 	C:\Windows\system32\WINMM.dll
+0x74f30000 - 0x74f7c000 	C:\Windows\system32\apphelp.dll
+0x6d270000 - 0x6d278000 	C:\Program Files\Java\jre1.6.0_07\bin\hpi.dll
+0x77530000 - 0x77535000 	C:\Windows\system32\PSAPI.DLL
+0x6d770000 - 0x6d77c000 	C:\Program Files\Java\jre1.6.0_07\bin\verify.dll
+0x6d310000 - 0x6d32f000 	C:\Program Files\Java\jre1.6.0_07\bin\java.dll
+0x6d7b0000 - 0x6d7bf000 	C:\Program Files\Java\jre1.6.0_07\bin\zip.dll
+
+VM Arguments:
+jvm_args: -Xms128m -Xmx512m -Dfile.encoding=GBK 
+java_command: LoadSections
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk1.6.0_07
+CLASSPATH=C:\MinGW\bin;C:\Program Files\Java\jdk1.6.0_07\lib;C:\Program Files\Java\jdk1.6.0_07\lib\tools.jar;C:\test\mts\mts\lib\antlr-2.7.6.jar;C:\test\mts\mts\bin\mts.jar;
+PATH=C:/Program Files/Java/jre1.6.0_07/bin/client;C:/Program Files/Java/jre1.6.0_07/bin;C:/Program Files/Java/jre1.6.0_07/lib/i386;C:\Program Files\ARM\bin\win_32-pentium;C:\Program Files\ARM\RVD\Core\1.8\734\win_32-pentium\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;c:\Program Files\Hewlett-Packard\HP ProtectTools Security Manager\Bin\;c:\Program Files\Intel\DMIX;C:\Program Files\Intel\Services\IPT\;C:\Program Files\ARM\RVCT\Programs\2.2\349\win_32-pentium;C:\Program Files\ARM\Utilities\FLEXlm\9.2\release\win_32-pentium;C:\Testbed;C:\Program Files\Java\jdk1.6.0_07\bin\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\software\UserData\miktex\bin;C:\software\MiKTeX\miktex\bin;C:\software\CTeX\ctex\bin;C:\software\CTeX\cct\bin;C:\software\CTeX\ty\bin;C:\software\Ghostscript\gs9.05\bin;C:\software\GSview\gsview;C:\software\WinEdt;C:\Program Files\PTV_Vision\NEMA\JRE\bin\client;C:\Program Files\TortoiseSVN\bin;C:\MinGW\bin;C:\Program Files\Microsoft Visual Studio\Common\Tools\WinNT;C:\Program Files\Microsoft Visual Studio\Common\MSDev98\Bin;C:\Program Files\Microsoft Visual Studio\Common\Tools;C:\Program Files\Microsoft Visual Studio\VC98\bin;C:\SysGCC\powerpc-eabi\bin;C:\Program Files\eclipse;
+USERNAME=mcy
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=x86 Family 6 Model 42 Stepping 7, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 4 (8 cores per cpu, 2 threads per core) family 6 model 10 stepping 7, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, ht
+
+Memory: 4k page, physical 2054264k(234636k free), swap 4194303k(16212k free)
+
+vm_info: Java HotSpot(TM) Client VM (10.0-b23) for windows-x86 JRE (1.6.0_07-b06), built on Jun 10 2008 01:14:11 by "java_re" with MS VC++ 7.1
+
+time: Tue Jul 16 15:31:23 2013
+elapsed time: 6 seconds
+
